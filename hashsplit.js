@@ -44,3 +44,4 @@ var HashSearch = new function () {
        }
    })();
 }
+window.onhashchange = HashSearch.load;
