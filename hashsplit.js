@@ -1,47 +1,59 @@
 
-var HashSearch = new function () {
-   var params;
+var HashSplit = new function () {
 
-   this.set = function (key, value) {
-      params[key] = value;
-      this.push();
-   };
+    pseudoGet = function (id, value) { // TODO this
 
-   this.remove = function (key, value) {
-      delete params[key];
-      this.push();
-   };
+        id = document.getElementById(id) ;
+        if (id == null )  return  ;
+
+        switch( id.tagName ) {
+            case 'INPUT' : // todo checkbox
+                id.value = value;
+            break
+        }
+    };
+    
+    pseudoDir = function (pseudoDir) { // TODO this
+        id = document.getElementById(pseudoDir) ;
+        if (id == null )  return  ;
+
+        switch( id.tagName ) {
+            case 'P' :
+            case 'DIV' :
+                document.getElementsByClassName('hashtab').visibility = "hidden"; // FIXME // TOD siblings
+                id.style.visibility = 'visible';
+            break
+            case 'INPUT' : // todo checkbox
+                id.checked=true
+            break
+            case 'A' :
+                id.click();
+            break
+        }
+    };
 
 
-   this.get = function (key, value) {
-       return params[key];
-   };
+   (this.hashrouter = function () {
 
-   this.keyExists = function (key) {
-       return params.hasOwnProperty(key);
-   };
 
-   this.push= function () {
-       var hashBuilder = [], key, value;
-
-       for(key in params) if (params.hasOwnProperty(key)) {
-           key = escape(key), value = escape(params[key]); // escape(undefined) == "undefined"
-           hashBuilder.push(key + ( (value !== "undefined") ? '=' + value : "" ));
-       }
-
-       window.location.hash = hashBuilder.join("&");
-   };
-
-   (this.load = function () {
-       params = {}
-       var hashStr = window.location.hash, hashArray, keyVal
+       var hashStr = window.location.hash, hashPseudoGets, keyVal
        hashStr = hashStr.substring(1, hashStr.length);
-       hashArray = hashStr.split('&');
+       hashPseudoGets = hashStr.split('&');
+       hashPseudoDirs = hashStr.split('/');
 
-       for(var i = 0; i < hashArray.length; i++) {
-           keyVal = hashArray[i].split('=');
-           params[unescape(keyVal[0])] = (typeof keyVal[1] != "undefined") ? unescape(keyVal[1]) : keyVal[1];
+       for(var i = 0; i < hashPseudoGets.length; i++) {
+           keyVal = hashPseudoGets[i].split('=');
+           pseudoGet( unescape(keyVal[0]) , (typeof keyVal[1] != "undefined") ? unescape(keyVal[1]) : keyVal[1] );
        }
+
+       for(var i = 0; i < hashPseudoDirs.length; i++) {
+
+           pseudoDir( hashPseudoDirs[i] );
+       }
+
+
    })();
+
+   window.onhashchange = this.hashrouter;
+
 }
-window.onhashchange = HashSearch.load;

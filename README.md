@@ -3,6 +3,15 @@ hashsplit
 
 hashsplit is JS plugin to use various values from URL fragment identifier (hash) #foo , #foo/bar or #foo=bar&amp;city=springfield
 
+It uses the values from the hash with DOM-Id in a specific way:
 
-Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url)
+* elements with the class `hashtab` are shown and all siblings are hidden TODO
+* links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
+* forms are filled (works only with pseudogets `&name=value` )
 
+
+Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url) and extended from [jquery version](https://github.com/klml/usefulclassroomphrases).
+
+Similar:
+
+* [jQuery BBQ](http://benalman.com/projects/jquery-bbq-plugin/)
