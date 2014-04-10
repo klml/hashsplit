@@ -19,3 +19,9 @@ Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com
 Similar:
 
 * [jQuery BBQ](http://benalman.com/projects/jquery-bbq-plugin/)
+
+
+todo:
+* hooks
+* alert
+* checkbox no
