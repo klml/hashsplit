@@ -1,40 +1,40 @@
-
 var HashSplit = new function () {
 
-    pseudoGet = function (id, value) { // TODO this
+    pseudoGet = function (getKey, getValue) { // TODO this
+        htmlId = document.getElementById( getKey ) ;
+        if (htmlId == null )  return  ;
 
-        id = document.getElementById(id) ;
-        if (id == null )  return  ;
-
-        switch( id.tagName ) {
-            case 'INPUT' : // todo checkbox
-                id.value = value;
+        switch( htmlId.tagName ) {
+            case 'INPUT' : // todo check checkbox
+                htmlId.value = getValue;
             break
         }
     };
     
     pseudoDir = function (pseudoDir) { // TODO this
-        id = document.getElementById(pseudoDir) ;
-        if (id == null )  return  ;
+        htmlId = document.getElementById(pseudoDir) ;
+        if (htmlId == null )  return  ;
 
-        switch( id.tagName ) {
+
+        switch( htmlId.tagName ) {
             case 'P' :
             case 'DIV' :
-                document.getElementsByClassName('hashtab').visibility = "hidden"; // FIXME // TOD siblings
-                id.style.visibility = 'visible';
+                var hashtab = document.getElementsByClassName('hashtab');
+                hashtab.visibility = "hidden"; // FIXME // TOD siblings
+
+                htmlId.style.visibility = 'visible';
             break
-            case 'INPUT' : // todo checkbox
-                id.checked=true
+            case 'INPUT' :
+                if( htmlId.getAttribute('type') == 'checkbox')  htmlId.checked=true
             break
             case 'A' :
-                id.click();
+                htmlId.click();
             break
         }
     };
 
 
    (this.hashrouter = function () {
-
 
        var hashStr = window.location.hash, hashPseudoGets, keyVal
        hashStr = hashStr.substring(1, hashStr.length);
@@ -47,7 +47,6 @@ var HashSplit = new function () {
        }
 
        for(var i = 0; i < hashPseudoDirs.length; i++) {
-
            pseudoDir( hashPseudoDirs[i] );
        }
 

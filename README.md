@@ -9,6 +9,10 @@ It uses the values from the hash with DOM-Id in a specific way:
 * links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
 * forms are filled (works only with pseudogets `&name=value` )
 
+[Demo](http://klml.github.com/hashsplit/)
+
+Any ideas for:
+* img?
 
 Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url) and extended from [jquery version](https://github.com/klml/usefulclassroomphrases).
 
