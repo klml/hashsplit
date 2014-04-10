@@ -20,7 +20,9 @@ var HashSplit = new function () {
             case 'P' :
             case 'DIV' :
                 var hashtab = document.getElementsByClassName('hashtab');
-                hashtab.visibility = "hidden"; // FIXME // TOD siblings
+                for(var i = 0; i != hashtab.length; ++i) {
+                    hashtab[i].style.visibility = "hidden";
+                }
 
                 htmlId.style.visibility = 'visible';
             break
