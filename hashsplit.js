@@ -12,31 +12,18 @@ var HashSplit = new function () {
         }
     })();
 
-
-    pseudoGet = function (getKey, getValue) { // TODO this
-        htmlId = document.getElementById( getKey ) ;
+    hashElement = function (getKey, getValue) { // TODO this
+        var htmlId = document.getElementById( getKey ) ;
         if (htmlId == null )  return  ;
-
-        switch( htmlId.tagName ) {
-            case 'INPUT' : // todo check checkbox
-                htmlId.value = getValue;
-            break
-        }
-    };
-    
-    pseudoDir = function (pseudoDir) { // TODO this
-        htmlId = document.getElementById(pseudoDir) ;
-        if (htmlId == null )  return  ;
-
 
         switch( htmlId.tagName ) {
             case 'P' :
             case 'DIV' :
                 hastabber( htmlId );
-                
             break
             case 'INPUT' :
-                if( htmlId.getAttribute('type') == 'checkbox')  htmlId.checked=true
+                if( htmlId.getAttribute('type') == 'checkbox')  htmlId.checked=true ;
+                htmlId.value = getValue;
             break
             case 'A' :
                 htmlId.click();
@@ -54,11 +41,11 @@ var HashSplit = new function () {
 
        for(var i = 0; i < hashPseudoGets.length; i++) {
            keyVal = hashPseudoGets[i].split('=');
-           pseudoGet( unescape(keyVal[0]) , (typeof keyVal[1] != "undefined") ? unescape(keyVal[1]) : keyVal[1] );
+           hashElement( unescape(keyVal[0]) , (typeof keyVal[1] != "undefined") ? unescape(keyVal[1]) : keyVal[1] );
        }
 
        for(var i = 0; i < hashPseudoDirs.length; i++) {
-           pseudoDir( hashPseudoDirs[i] );
+           hashElement( hashPseudoDirs[i] );
        }
    })();
 
