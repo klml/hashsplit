@@ -23,13 +23,11 @@ var HashSplit = new function () {
                 hastabber( htmlId );
             break
             case 'INPUT' :
-
-                if( htmlId.getAttribute('type') == 'checkbox' && getValue == undefined ) {
-                    htmlId.checked = true 
+                if( htmlId.getAttribute('type') == 'checkbox' ) {
+                    htmlId.checked = ( getValue === 'true' || getValue == undefined ) ;
                 } else {
-                    htmlId.checked = (getValue === 'true') ;
-                };
                 htmlId.value = getValue;
+                }
             break
             case 'A' :
                 htmlId.click();
