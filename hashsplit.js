@@ -1,5 +1,18 @@
 var HashSplit = new function () {
 
+    (hastabber = function( htmlId ) {
+        var hashtab = document.getElementsByClassName('hashtab');
+        for(var i = 0; i != hashtab.length; ++i) {
+            hashtab[i].style.visibility = 'hidden';
+        }
+        if ( htmlId == undefined) {
+            hashtab[0].style.visibility = 'visible'; 
+        } else {
+            htmlId.style.visibility = 'visible'; // todo not hashtab
+        }
+    })();
+
+
     pseudoGet = function (getKey, getValue) { // TODO this
         htmlId = document.getElementById( getKey ) ;
         if (htmlId == null )  return  ;
@@ -19,12 +32,8 @@ var HashSplit = new function () {
         switch( htmlId.tagName ) {
             case 'P' :
             case 'DIV' :
-                var hashtab = document.getElementsByClassName('hashtab');
-                for(var i = 0; i != hashtab.length; ++i) {
-                    hashtab[i].style.visibility = "hidden";
-                }
-
-                htmlId.style.visibility = 'visible';
+                hastabber( htmlId );
+                
             break
             case 'INPUT' :
                 if( htmlId.getAttribute('type') == 'checkbox')  htmlId.checked=true
@@ -51,8 +60,6 @@ var HashSplit = new function () {
        for(var i = 0; i < hashPseudoDirs.length; i++) {
            pseudoDir( hashPseudoDirs[i] );
        }
-
-
    })();
 
    window.onhashchange = this.hashrouter;

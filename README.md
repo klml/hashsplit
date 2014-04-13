@@ -5,7 +5,7 @@ hashsplit is JS plugin to use various values from URL fragment identifier (hash)
 
 It uses the values from the hash with DOM-Id in a specific way:
 
-* elements with the class `hashtab` are shown and all siblings are hidden TODO
+* elements with the class `hashtab` are shown and all siblings are hidden
 * links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
 * forms are filled (works only with pseudogets `&name=value` )
 
@@ -22,6 +22,8 @@ Similar:
 
 
 todo:
+* hastabber sibbling
+* this
 * hooks
 * alert
 * checkbox no
