@@ -13,6 +13,7 @@ var HashSplit = new function () {
     })();
 
     hashElement = function (getKey, getValue) { // TODO this
+
         var htmlId = document.getElementById( getKey ) ;
         if (htmlId == null )  return  ;
 
@@ -22,7 +23,12 @@ var HashSplit = new function () {
                 hastabber( htmlId );
             break
             case 'INPUT' :
-                if( htmlId.getAttribute('type') == 'checkbox')  htmlId.checked=true ;
+
+                if( htmlId.getAttribute('type') == 'checkbox' && getValue == undefined ) {
+                    htmlId.checked = true 
+                } else {
+                    htmlId.checked = (getValue === 'true') ;
+                };
                 htmlId.value = getValue;
             break
             case 'A' :
