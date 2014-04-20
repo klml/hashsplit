@@ -22,8 +22,9 @@ Similar:
 
 
 todo:
-* hastabber sibbling
+
+* hashtabber sibbling
 * this
 * hooks
 * alert
-* checkbox no
+

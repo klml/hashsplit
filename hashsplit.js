@@ -1,14 +1,25 @@
 var HashSplit = new function () {
 
-    (hastabber = function( htmlId ) {
-        var hashtab = document.getElementsByClassName('hashtab');
-        for(var i = 0; i != hashtab.length; ++i) {
-            hashtab[i].style.visibility = 'hidden';
-        }
-        if ( htmlId == undefined) {
-            hashtab[0].style.visibility = 'visible'; 
+    var hashtabberfirstactive = 1; 
+    var hashtabberclass = 'hashtab'; // TODO configbl
+
+    (hashtabber = function( htmlId ) {
+        
+        if (typeof htmlId == "undefined") { // TODO + the other families
+            var hashtabs = document.getElementsByClassName( hashtabberclass ) ;
+
+            for(var i = 0; i != hashtabs.length; ++i) {
+                hashtabs[i].style.visibility = 'hidden';
+            }
+            hashtabs[1].style.visibility = 'visible'; // todo not hashtab
+
         } else {
-            htmlId.style.visibility = 'visible'; // todo not hashtab
+            var sibblings = htmlId.parentNode.getElementsByClassName( hashtabberclass ) ;
+
+            for(var i = 0; i != sibblings.length; ++i) {
+                sibblings[i].style.visibility = 'hidden';
+            }
+            htmlId.style.visibility = 'visible'; // TODO not hashtab
         }
     })();
 
@@ -20,7 +31,7 @@ var HashSplit = new function () {
         switch( htmlId.tagName ) {
             case 'P' :
             case 'DIV' :
-                hastabber( htmlId );
+                hashtabber( htmlId );
             break
             case 'INPUT' :
                 if( htmlId.getAttribute('type') == 'checkbox' ) {
@@ -51,6 +62,7 @@ var HashSplit = new function () {
        for(var i = 0; i < hashPseudoDirs.length; i++) {
            hashElement( hashPseudoDirs[i] );
        }
+       // TODO not twice with singels
    })();
 
    window.onhashchange = this.hashrouter;
