@@ -1,23 +1,24 @@
 var HashSplit = new function () {
 
-    var hashtabberfirstactive = 1; 
+    var hashtabberfirstactive = 0; 
     var hashtabberclass = 'hashtab'; // TODO configbl
 
     (hashtabber = function( htmlId ) {
-        
-        if (typeof htmlId == "undefined") { // TODO + the other families
+
+        if (typeof htmlId == "undefined") {
             var hashtabs = document.getElementsByClassName( hashtabberclass ) ;
 
             for(var i = 0; i != hashtabs.length; ++i) {
                 hashtabs[i].style.visibility = 'hidden';
+
+                var siblings = hashtabs[i].parentNode.getElementsByClassName( hashtabberclass ) ;
+                siblings[hashtabberfirstactive].style.visibility = 'visible';
             }
-            hashtabs[1].style.visibility = 'visible'; // todo not hashtab
+        } else { // todo not hashtab
+            var siblings = htmlId.parentNode.getElementsByClassName( hashtabberclass ) ;
 
-        } else {
-            var sibblings = htmlId.parentNode.getElementsByClassName( hashtabberclass ) ;
-
-            for(var i = 0; i != sibblings.length; ++i) {
-                sibblings[i].style.visibility = 'hidden';
+            for(var i = 0; i != siblings.length; ++i) {
+                siblings[i].style.visibility = 'hidden';
             }
             htmlId.style.visibility = 'visible'; // TODO not hashtab
         }
