@@ -16,15 +16,20 @@ Any ideas for:
 
 Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url) and extended from [jquery version](https://github.com/klml/usefulclassroomphrases).
 
-Similar:
+## similar usage 
 
+* [formassembly](http://help.formassembly.com/knowledgebase/articles/340353-prefill-through-the-url)
 * [jQuery BBQ](http://benalman.com/projects/jquery-bbq-plugin/)
+* contactform7 for wordpress [Getting Default Values from the Context](http://contactform7.com/getting-default-values-from-the-context/)
+* stackoverflow questions on this:
+** [Pre-fill form field via URL in html](http://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html)
+** [Prefill form through url](http://stackoverflow.com/questions/29047386/prefill-form-through-url) with this [clientside working form](http://tumblr.followd.co.nz/login.php?email=masterofcoins)
 
 
-todo:
+
+## todo:
 
 * hashtabber sibbling
 * this
 * hooks
 * alert
-
