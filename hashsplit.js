@@ -26,9 +26,10 @@ var HashSplit = new function () {
 
     hashForm = function( htmlId, hashVal ) {
         if( htmlId.getAttribute('type') == 'checkbox' ) {
-            htmlId.checked = ( hashVal === 'true' || hashVal == undefined ) ;
+            // check checkbox on 'true' or any string, but uncheck with 'false' and '' (empty string) only
+            htmlId.checked = !( hashVal === 'false' || hashVal == '' ) ;
         } else {
-        htmlId.value = hashVal;
+            htmlId.value = hashVal ;
         }
     };
 

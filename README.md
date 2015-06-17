@@ -7,7 +7,8 @@ It uses the values from the hash with DOM-Id in a specific way:
 
 * elements with the class `hashtab` are shown and all siblings are hidden
 * links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
-* forms are filled (works only with pseudogets `&name=value` )
+* forms are filled (works only with pseudogets `&name=value` or `/name=value` )
+  * checkbox get checked on 'true' or any string, but unchecked with 'false' or '' (empty string) only.
 
 [Demo](http://klml.github.com/hashsplit/)
 
