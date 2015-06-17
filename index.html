@@ -55,57 +55,46 @@
 <body>
     <div id="panel">
         <h1 id="hashsplit"><a href="./">hashsplit.js - demo</a></h1>
-        <p><a href="https://github.com/klml/hashsplit">github.com/klml/hashsplit</a> is JS plugin to use various values from URL fragment identifier (hash) #foo , #foo/bar or #foo=bar&city=springfield.</p>
+        <p><a href="https://github.com/klml/hashsplit">github.com/klml/hashsplit</a> is JS plugin to use various values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
 
-        <h3>single value</h3>
+        <h3>Tabs</h3>
         <div>
-            <span>Show <a href="#loremipsum">#loremipsum</a>, <a href="#wortbergen">#wortbergen</a> or <a href="#lingues">#lingues</a></span>
+            <span>Show div (or other block elements) and hide the rest: <a href="#loremipsum">#loremipsum</a>, <a href="#wortbergen">#wortbergen</a> or <a href="#lingues">#lingues</a></span>
 
             <div class="boxing">
                 <p id="loremipsum" class="hashtab"><b>Lorem ipsum</b> dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
                 <p id="wortbergen" class="hashtab">Weit hinten, hinter den <b>Wortbergen</b>, fern der Länder Vokalien und Konsonantien leben die Blindtexte.</p>
                 <p id="lingues" class="hashtab">Li Europan <b>lingues</b> es membres del sam familie. Lor separat existentie es un myth.</p>
             </div>
-            <span>Another <a href="#vero">#vero</a>, <a href="#takimata">#takimata</a> or <a href="#gubergren">#gubergren</a></span>
 
+            <h4>Another area</h4>
+            <span><a href="#vero">#vero</a>, <a href="#takimata">#takimata</a> or <a href="#gubergren">#gubergren</a></span>
             <div class="boxing">
                 <p id="vero" class="hashtab">At <b>vero</b> eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren</p>
                 <p id="takimata" class="hashtab">no sea <b>takimata</b> sanctus est Lorem ipsum dolor sit amet.</p>
                 <p id="gubergren" class="hashtab">Stet clita kasd <b>gubergren</b>, no sea takimata sanctus est.</p>
             </div>
-            <p>Check a checkbox <a href="#hashsplit_checkbox">#hashsplit_checkbox</a> to uncheck use <a href="#get">Pseudo Gets</a> <a href="#hashsplit_checkbox=false">#hashsplit_checkbox=false</a>
             </p>
 
-            <form>
-                <input type='checkbox' id="hashsplit_checkbox" value="yes"> checkbox
-            </form>
 
-            <p>trigger a link <a href="#hyperlink">#hyperlink</a>.</p>
-
-            <a id="hyperlink" href="#lara">#lara</a>
-
-            <p>trigger a defined action <a href="#alert">#alert</a>.</p>
-
-            <p>Or combine all <a href="#loremipsum/hashsplit_checkbox/alert">#loremipsum/hashsplit_checkbox/alert</a>.</p>
-            
-        </div>
-        
-
-        <h2 id="get" >Pseudo Get</h2>
-        <div>                
+            <h3>prefill forms through url</h3>
             <p>link to <a href="#name=bob&city=springfield&color=green">#name=bob&city=springfield&color=green</a> or link to <a href="#name=alice&city=shelbyville&color=">#name=alice&city=shelbyville&color=</a>.</p>
+
+            <p>Check a checkbox <a href="#hashsplit_checkbox">#hashsplit_checkbox</a> to uncheck use <a href="#hashsplit_checkbox=false">#hashsplit_checkbox=false</a>
+
             <form>
                 <input id="name" /><br />
                 <input id="city" /><br />
                 <input id="color" />
+                <input type='checkbox' id="hashsplit_checkbox" value="yes"> checkbox
             </form>
+
+            <h3>Other</h3>
+            <p>trigger a link <a href="#hyperlink">#hyperlink</a>.
+                <a id="hyperlink" href="#lara"><button>#lara</button></a>
+            </p>
+            <p>Or combine all <a href="#wortbergen/takimata/hashsplit_checkbox/name=%C3%A4licé&city=capitalcity">#wortbergen/takimata /hashsplit_checkbox/name=%C3%A4licé&city=capitalcity</a>.</p>
         </div>
-
-
-
-
-
-
     </div>
     <script src="hashsplit.js" type="text/javascript"></script>
 </body>

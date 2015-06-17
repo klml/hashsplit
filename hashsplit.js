@@ -24,9 +24,9 @@ var HashSplit = new function () {
         }
     })();
 
-    hashElement = function (getKey, getValue) { // TODO this
+    hashElement = function (hashKey, hashVal) { // TODO this
 
-        var htmlId = document.getElementById( getKey ) ;
+        var htmlId = document.getElementById( hashKey ) ;
         if (htmlId == null )  return  ;
 
         switch( htmlId.tagName ) {
@@ -36,9 +36,9 @@ var HashSplit = new function () {
             break
             case 'INPUT' :
                 if( htmlId.getAttribute('type') == 'checkbox' ) {
-                    htmlId.checked = ( getValue === 'true' || getValue == undefined ) ;
+                    htmlId.checked = ( hashVal === 'true' || hashVal == undefined ) ;
                 } else {
-                htmlId.value = getValue;
+                htmlId.value = hashVal;
                 }
             break
             case 'A' :
@@ -50,22 +50,16 @@ var HashSplit = new function () {
 
    (this.hashrouter = function () {
 
-       var hashStr = window.location.hash, hashPseudoGets, keyVal
+       var hashStr = window.location.hash, hashElements
        hashStr = hashStr.substring(1, hashStr.length);
-       hashPseudoGets = hashStr.split('&');
-       hashPseudoDirs = hashStr.split('/');
+       hashElements = hashStr.split(/[\/&]+/);
 
-       for(var i = 0; i < hashPseudoGets.length; i++) {
-           keyVal = hashPseudoGets[i].split('=');
-           hashElement( unescape(keyVal[0]) , (typeof keyVal[1] != "undefined") ? unescape(keyVal[1]) : keyVal[1] );
+       for(var i = 0; i < hashElements.length; i++) {
+           hashKeyVal = hashElements[i].split('=');
+           hashElement( hashKeyVal[0] , hashKeyVal[1] );
        }
 
-       for(var i = 0; i < hashPseudoDirs.length; i++) {
-           hashElement( hashPseudoDirs[i] );
-       }
-       // TODO not twice with singels
    })();
 
    window.onhashchange = this.hashrouter;
-
 }
