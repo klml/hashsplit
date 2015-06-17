@@ -24,6 +24,14 @@ var HashSplit = new function () {
         }
     })();
 
+    hashForm = function( htmlId, hashVal ) {
+        if( htmlId.getAttribute('type') == 'checkbox' ) {
+            htmlId.checked = ( hashVal === 'true' || hashVal == undefined ) ;
+        } else {
+        htmlId.value = hashVal;
+        }
+    };
+
     hashElement = function (hashKey, hashVal) { // TODO this
 
         var htmlId = document.getElementById( hashKey ) ;
@@ -35,11 +43,7 @@ var HashSplit = new function () {
                 hashtabber( htmlId );
             break
             case 'INPUT' :
-                if( htmlId.getAttribute('type') == 'checkbox' ) {
-                    htmlId.checked = ( hashVal === 'true' || hashVal == undefined ) ;
-                } else {
-                htmlId.value = hashVal;
-                }
+                hashForm( htmlId, hashVal );
             break
             case 'A' :
                 htmlId.click();
