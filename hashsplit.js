@@ -29,6 +29,7 @@ var HashSplit = new function () {
             // check checkbox on 'true' or any string, but uncheck with 'false' and '' (empty string) only
             htmlId.checked = !( hashVal === 'false' || hashVal == '' ) ;
         } else {
+	    if( typeof hashVal == "undefined") return ;	
             htmlId.value = hashVal ;
         }
     };
