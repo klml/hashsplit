@@ -68,4 +68,30 @@ var HashSplit = new function () {
    })();
 
    window.onhashchange = this.hashrouter;
+
+}
+
+var updateHash = new function () {
+
+    var allInputs = document.getElementsByTagName("input");
+
+    buildHash = function () {
+        var newhash = "#" ;
+
+        for(var i = 0; i < allInputs.length; i++) {
+            if (i != 0 ) newhash += "&" ; // add leading "&" on 2 key-value, avoid "&" at the end
+
+            if( allInputs[i].getAttribute('type') == 'checkbox' ) {
+                newhashvalue = allInputs[i].checked ;
+            } else {
+                newhashvalue = allInputs[i].value ;
+            }
+            newhash += allInputs[i].id + "=" +  newhashvalue ;
+        }
+        window.location.hash = newhash;
+    };
+
+    for(var i = 0; i < allInputs.length; i++) {
+        allInputs[i].onblur = function(){ buildHash() };
+    }
 }
