@@ -10,6 +10,7 @@ var HashSplit = new function () {
 
             for(var i = 0; i != hashtabs.length; ++i) {
                 hashtabs[i].style.visibility = 'hidden';
+                hashtabs[i].style.position = 'absolute';
 
                 var siblings = hashtabs[i].parentNode.getElementsByClassName( hashtabberclass ) ;
                 siblings[hashtabberfirstactive].style.visibility = 'visible';
@@ -19,6 +20,7 @@ var HashSplit = new function () {
 
             for(var i = 0; i != siblings.length; ++i) {
                 siblings[i].style.visibility = 'hidden';
+                siblings[i].style.position = 'absolute';
             }
             htmlId.style.visibility = 'visible'; // TODO not hashtab
         }
