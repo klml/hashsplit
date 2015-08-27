@@ -4,8 +4,7 @@
  <link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/" />
  <title>hashsplit - demo</title>
  <style>
-
-    /* from http://bettermotherfuckingwebsite.com/ */
+    /* from http://bettermotherfuckingwebsite.com/ + flavour */
      body{
          margin:40px auto;
          max-width:950px;
@@ -14,25 +13,9 @@
          color:#444;
          padding:0 10px
         }
-    h1,h2,h3{
+    h1,h2,h3,h4{
         line-height:1.2;
-    }
-    .left {
-        float:left;
-        margin:0 25px 5px 0;
-    }
-
-    /* from http://bettermotherfuckingwebsite.com/ */
-     body{
-         margin:40px auto;
-         max-width:950px;
-         line-height:1.6;
-         font-size:18px;
-         color:#444;
-         padding:0 10px
-        }
-    h1,h2,h3{
-        line-height:1.2;
+        clear: both;
     }
     .left {
         float:left;
@@ -43,7 +26,6 @@
         height: 80px;
     }
     .boxing p {
-        position: absolute;
         width: 550px;
         float: left;
         border: 1px solid gray;
@@ -89,9 +71,9 @@
                 <input type='checkbox' id="hashsplit_checkbox" value="yes"> checkbox
             </form>
 
-            <h3>Other</h3>
-            <p>trigger a link <a href="#hyperlink">#hyperlink</a>.
-                <a id="hyperlink" href="#lara"><button>#lara</button></a>
+            <h3>Hyperlink</h3>
+            <p>Trigger a <a href="#hyperlink">#hyperlink</a> on:
+                <a id="hyperlink" onclick="alert('alert on a button, triggered by #hyperlink')" ><button>#alert on a button</button></a>
             </p>
             <p>Or combine all <a href="#wortbergen/takimata/hashsplit_checkbox/name=%C3%A4licé&city=capitalcity">#wortbergen/takimata /hashsplit_checkbox/name=%C3%A4licé&city=capitalcity</a>.</p>
         </div>
