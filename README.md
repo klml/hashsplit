@@ -34,3 +34,4 @@ Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com
 * this
 * hooks
 * alert
+* highlight
