@@ -58,7 +58,7 @@ var HashSplit = new function () {
 
    (this.hashrouter = function () {
 
-       var hashStr = window.location.hash, hashElements
+       var hashStr = decodeURIComponent(window.location.hash), hashElements
        hashStr = hashStr.substring(1, hashStr.length);
        hashElements = hashStr.split(/[\/&]+/);
 
