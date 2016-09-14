@@ -15,7 +15,8 @@ It uses the values from the hash with DOM-Id in a specific way:
 Any ideas for:
 * img?
 
-Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url) and extended from [jquery version](https://github.com/klml/usefulclassroomphrases).
+Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url).
+
 
 ## similar usage 
 
