@@ -15,8 +15,7 @@ It uses the values from the hash with DOM-Id in a specific way:
 Any ideas for:
 * img?
 
-Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url).
-
+Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url). [accounts.google.com](https://accounts.google.com/SignUpWithoutGmail#FirstName=John&LastName=Doe&EmailAddress=example@example.com) is using the function 'InputHolder.prototype.prefill' doing similar the same as this function 'HashSplit'.
 
 ## similar usage 
 
