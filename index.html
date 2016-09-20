@@ -49,6 +49,10 @@ h5+h6 {margin-top: 2px;}
         border: 1px solid gray;
         padding: 5px;
     }
+    #main a {
+        background-color: #d3d3d3;
+        padding: 2px 10px;
+    }
  </style>
 </head>
 
@@ -57,7 +61,7 @@ h5+h6 {margin-top: 2px;}
         <h1 id="hashsplit" class="panel"><a href="https://github.com/klml/hashsplit" >hashsplit.js - demo</a></h1>
         <p class="panel"><a href="">github.com/klml/hashsplit</a> is a JS plugin to use various values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
     </div>
-    <div class="panel">
+    <div id="main" class="panel">
         <h3>Tabs</h3>
         <div>
             <span>Show div (or other block elements) and hide the rest: <a href="#loremipsum">#loremipsum</a>, <a href="#wortbergen">#wortbergen</a> or <a href="#lingues">#lingues</a></span>
@@ -96,7 +100,7 @@ h5+h6 {margin-top: 2px;}
 
             <h3>Hyperlink</h3>
             <p>Trigger a <a href="#hyperlink">#hyperlink</a> on:
-                <a id="hyperlink" onclick="alert('alert on a button, triggered by #hyperlink')" ><button>#alert on a button</button></a>
+                <a id="hyperlink" onclick="alert('alert on a button, triggered by #hyperlink')" style="background-color: inherit;"><button>#alert on a button</button></a>
             </p>
             <p>Or combine all <a href="#wortbergen/takimata/hashsplit_checkbox/name=%C3%A4licé&city=capitalcity">#wortbergen/takimata /hashsplit_checkbox/name=%C3%A4licé&city=capitalcity</a>.</p>
         </div>
