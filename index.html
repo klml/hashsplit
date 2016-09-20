@@ -2,25 +2,43 @@
 <head>
  <meta http-equiv="content-type" content="text/html; charset=utf-8">
  <link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/" />
+ <meta name="viewport" content="width=device-width, user-scalable=0"/>
  <title>hashsplit - demo</title>
+ <link rel="stylesheet" type="text/css" href="//cdn.rawgit.com/klml/usefulclassroomphrases/v1.1/ucp.css" media="screen" />
  <style>
-    /* from http://bettermotherfuckingwebsite.com/ + flavour */
-     body{
-         margin:40px auto;
-         max-width:950px;
-         line-height:1.6;
-         font-size:18px;
-         color:#444;
-         padding:0 10px
-        }
-    h1,h2,h3,h4{
-        line-height:1.2;
-        clear: both;
-    }
-    .left {
-        float:left;
-        margin:0 25px 5px 0;
-    }
+/* proportion */
+/* if you use no grid like bootstrap, skelton */
+body { font:normal 12px Arial, Helvetica; background: repeat-x top left #F6F6F6 ;margin: 0; padding: 0; outline: none;line-height:1.6;}
+
+/* middled fixed width, from http://bettermotherfuckingwebsite.com/ */
+.panel {margin:5px auto;padding:0 10px;max-width:650px;}
+
+/* content */
+a { text-decoration: none; color: #525252; }
+a:hover { text-decoration: underline; }
+a:visited { color: #1F1F1F; }
+a:active, /* set class "active" for current pages*/
+a.active { color: #2E6465; }
+a[href^="#"] { font-style: italic; } /* anchor links staying on the current page */
+a[href^="http"]:after { color: #000; } /* external links */
+
+img { border: 0; }
+ul { list-style:none; list-style-image: url('data:image/gif;base64,R0lGODlhBQANAIAAAGOMnP///yH5BAEAAAEALAAAAAAFAA0AAAIJjI+pu+APo4SpADs'); margin-left: 15px;}
+
+/* headings*/
+h1,h2,h3,h4,h5,h6{padding:0; margin:30px 0 0 0;}
+h1{color:#000; font-size: 130%; }
+h2{color:#000; font-size: 120%; border-bottom: 1px solid gray;}
+h3{color:#000; font-size: 115%; }
+h4{color:#000; font-size: 110%; }
+h5{color:#000; font-size: 105%; }
+h6{color:#000; font-size: 105%; }
+h1+h2 {margin-top: 2px;}
+h2+h3 {margin-top: 2px;}
+h3+h4 {margin-top: 2px;}
+h4+h5 {margin-top: 2px;}
+h5+h6 {margin-top: 2px;}
+
 
     .boxing {
         height: 80px;
@@ -35,10 +53,11 @@
 </head>
 
 <body>
-    <div id="panel">
-        <h1 id="hashsplit"><a href="./">hashsplit.js - demo</a></h1>
-        <p><a href="https://github.com/klml/hashsplit">github.com/klml/hashsplit</a> is JS plugin to use various values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
-
+    <div style="background-color:#8da7cc;padding:35px;color:#fff;font-size: 16px;">
+        <h1 id="hashsplit" class="panel"><a href="https://github.com/klml/hashsplit" >hashsplit.js - demo</a></h1>
+        <p class="panel"><a href="">github.com/klml/hashsplit</a> is a JS plugin to use various values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
+    </div>
+    <div class="panel">
         <h3>Tabs</h3>
         <div>
             <span>Show div (or other block elements) and hide the rest: <a href="#loremipsum">#loremipsum</a>, <a href="#wortbergen">#wortbergen</a> or <a href="#lingues">#lingues</a></span>
