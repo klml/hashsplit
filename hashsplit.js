@@ -1,9 +1,9 @@
-var HashSplit = new function () {
+function hashsplit() {
 
-    var hashtabberfirstactive = 0; 
-    var hashtabberclass = 'hashtab'; // TODO configbl
+    function hashtabber ( htmlId ) {
 
-    (hashtabber = function( htmlId ) {
+        var hashtabberfirstactive = 0;
+        var hashtabberclass = 'hashtab'; // TODO configbl
 
         if (typeof htmlId == "undefined") {
             var hashtabs = document.getElementsByClassName( hashtabberclass ) ;
@@ -24,9 +24,9 @@ var HashSplit = new function () {
             }
             htmlId.style.visibility = 'visible'; // TODO not hashtab
         }
-    })();
+    };
 
-    hashForm = function( htmlId, hashVal ) {
+    function hashForm ( htmlId, hashVal ) {
         if( htmlId.getAttribute('type') == 'checkbox' ) {
             // check checkbox on 'true' or any string, but uncheck with 'false' and '' (empty string) only
             htmlId.checked = !( hashVal === 'false' || hashVal == '' ) ;
@@ -36,7 +36,7 @@ var HashSplit = new function () {
         }
     };
 
-    hashElement = function (hashKey, hashVal) { // TODO this
+    function hashElement (hashKey, hashVal) { // TODO this
 
         var htmlId = document.getElementById( hashKey ) ;
         if (htmlId == null )  return  ;
@@ -55,25 +55,22 @@ var HashSplit = new function () {
         }
     };
 
-
-   (this.hashrouter = function () {
-
+    (function hashrouter () {
        var hashStr = decodeURIComponent(window.location.hash), hashElements
        hashStr = hashStr.substring(1, hashStr.length);
        hashElements = hashStr.split(/[\/&]+/);
-
+    
        for(var i = 0; i < hashElements.length; i++) {
            hashKeyVal = hashElements[i].split('=');
            hashElement( hashKeyVal[0] , hashKeyVal[1] );
        }
+    })();
 
-   })();
-
-   window.onhashchange = this.hashrouter;
-
+    window.onhashchange = this.hashrouter;
 }
 
-var updateHash = new function () {
+
+function updateHash () {
 
     var allInputs = document.getElementsByTagName("input");
 
