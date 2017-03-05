@@ -66,8 +66,8 @@ function hashsplit() {
        }
     })();
 
-    window.onhashchange = this.hashrouter;
 }
+window.onhashchange = hashsplit;
 
 
 function updateHash () {
