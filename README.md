@@ -12,6 +12,16 @@ It uses the values from the hash with DOM-Id in a specific way:
 
 [Demo](http://klml.github.com/hashsplit/)
 
+## usage
+
+```
+    <script src="https://cdn.rawgit.com/klml/hashsplit/v2.0/hashsplit.js" type="text/javascript"></script>
+    <script>
+        hashsplit(); // activate hashspilt
+        updateHash(); // get changed input values back to hash
+    </script>
+```
+
 ## inspiration
 
 Initial JS from [Cristian Sanchez on stackoverflow.com](http://stackoverflow.com/questions/3729150/retrieve-specific-hash-tags-value-from-url). [accounts.google.com](https://accounts.google.com/SignUpWithoutGmail#FirstName=John&LastName=Doe&EmailAddress=example@example.com) is using the function 'InputHolder.prototype.prefill' doing similar the same as this function 'HashSplit'.
