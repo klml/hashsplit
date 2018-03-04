@@ -6,7 +6,7 @@ hashsplit is JS plugin to use various values from URL fragment identifier (hash)
 It uses the values from the hash with DOM-Id in a specific way:
 
 * elements with the class `hashtab` are shown and all siblings are hidden. You can use it as [tabs](http://www.jqueryrain.com/example/jquery-tabs/), but with native links on hash, instead on events on a heading. 
-* forms are filled (works only with pseudogets `&name=value` or `/name=value` )
+* forms (inputs, selects) are filled (works only with pseudogets `&name=value` or `/name=value` )
   * checkbox get checked on 'true' or any string, but unchecked with 'false' or '' (empty string) only.
 * links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
 

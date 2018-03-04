@@ -47,6 +47,7 @@ function hashsplit() {
                 hashtabber( htmlId );
             break
             case 'INPUT' :
+            case 'SELECT' :
                 hashForm( htmlId, hashVal );
             break
             case 'A' :
@@ -69,28 +70,29 @@ function hashsplit() {
 }
 window.onhashchange = hashsplit;
 
-
 function updateHash () {
 
-    var allInputs = document.getElementsByTagName("input");
+    var allInputs = Array.prototype.slice.call( document.getElementsByTagName("input") ) ;
+    var allSelect = Array.prototype.slice.call( document.getElementsByTagName("select") ) ;
+    var allFormfields = allInputs.concat( allSelect );
 
     buildHash = function () {
         var newhash = "#" ;
 
-        for(var i = 0; i < allInputs.length; i++) {
+        for(var i = 0; i < allFormfields.length; i++) {
             if (i != 0 ) newhash += "&" ; // add leading "&" on 2 key-value, avoid "&" at the end
 
-            if( allInputs[i].getAttribute('type') == 'checkbox' ) {
-                newhashvalue = allInputs[i].checked ;
+            if( allFormfields[i].getAttribute('type') == 'checkbox' ) {
+                newhashvalue = allFormfields[i].checked ;
             } else {
-                newhashvalue = allInputs[i].value ;
+                newhashvalue = allFormfields[i].value ;
             }
-            newhash += allInputs[i].id + "=" +  newhashvalue ;
+            newhash += allFormfields[i].id + "=" +  newhashvalue ;
         }
         window.location.hash = newhash;
     };
 
-    for(var i = 0; i < allInputs.length; i++) {
-        allInputs[i].onblur = function(){ buildHash() };
+    for(var i = 0; i < allFormfields.length; i++) {
+        allFormfields[i].onblur = function(){ buildHash() };
     }
 }
