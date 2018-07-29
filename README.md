@@ -37,7 +37,10 @@ Any ideas for:
   * [Pre-fill form field via URL in html](http://stackoverflow.com/questions/14070105/pre-fill-form-field-via-url-in-html)
   * [Prefill form through url](http://stackoverflow.com/questions/29047386/prefill-form-through-url) with this [clientside working form](http://tumblr.followd.co.nz/login.php?email=masterofcoins)
 
+## version
 
+* 1.0
+* 3.0 removed tabs, use [CSS :target](//developer.mozilla.org/en-US/docs/Web/CSS/:target)
 
 ## todo:
 
