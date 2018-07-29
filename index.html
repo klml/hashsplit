@@ -55,7 +55,7 @@ h5+h6 {margin-top: 2px;}
     <div id="main" class="panel">
 
             <h3>prefill forms through url</h3>
-            <p>link to <a href="#name=bob&city=springfield&color=green">#name=bob&city=springfield&color=green</a> or link to <a href="#name=alice&city=shelbyville&color=">#name=alice&city=shelbyville&color=</a>.</p>
+            <p>link to <a href="#name=bob&city=springfield&color=green">#name=bob&city=springfield&color=green</a> or link to <a href="#name=alice&city=shelbyville&color=&priority=1">#name=alice&city=shelbyville&color=&priority=1</a>.</p>
 
             <p>Check a checkbox <a href="#hashsplit_checkbox">#hashsplit_checkbox</a> to uncheck use <a href="#hashsplit_checkbox=false">#hashsplit_checkbox=false</a> or <a href="#hashsplit_checkbox=">#hashsplit_checkbox=</a>
 
@@ -65,9 +65,10 @@ h5+h6 {margin-top: 2px;}
                 <input id="color" /><br />
                 <input type='checkbox' id="hashsplit_checkbox" value="yes"> checkbox<br />
 
-                <select id="formselect" name="formselect">
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
+                <select id="priority" name="priority">
+                    <option value="1">Important</option>
+                    <option value="2" selected>Normal</option>
+                    <option value="3">Low</option>
                 </select>
 
             </form>
