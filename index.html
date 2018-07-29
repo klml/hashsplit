@@ -40,15 +40,6 @@ h4+h5 {margin-top: 2px;}
 h5+h6 {margin-top: 2px;}
 
 
-    .boxing {
-        height: 80px;
-    }
-    .boxing p {
-        width: 550px;
-        float: left;
-        border: 1px solid gray;
-        padding: 5px;
-    }
     #main a {
         background-color: #d3d3d3;
         padding: 2px 10px;
@@ -59,32 +50,9 @@ h5+h6 {margin-top: 2px;}
 <body>
     <div style="background-color:#8da7cc;padding:35px;color:#fff;font-size: 16px;">
         <h1 id="hashsplit" class="panel"><a href="https://github.com/klml/hashsplit" >hashsplit.js - demo</a></h1>
-        <p class="panel"><a href="">github.com/klml/hashsplit</a> is a JS plugin to use various values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
+        <p class="panel"><a href="">github.com/klml/hashsplit</a> is a JS plugin to use values from URL fragment identifier (hash) <code>#foo</code> , <code>#foo/bar</code> or <code>#foo=bar&city=springfield</code>.</p>
     </div>
     <div id="main" class="panel">
-        <h3>Tabs</h3>
-        <div>
-            <span>Show div (or other block elements) and hide the rest: <a href="#loremipsum">#loremipsum</a>, <a href="#wortbergen">#wortbergen</a> or <a href="#lingues">#lingues</a></span>
-
-            <div class="boxing">
-                <p id="loremipsum" class="hashtab"><b>Lorem ipsum</b> dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-                <p id="wortbergen" class="hashtab">
-                    <img src="//lorempixel.com/80/80/cats/7/" class="right" />
-                    Weit hinten, hinter den <b>Wortbergen</b>, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik, eines großen Sprachozeans. Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien.</p>
-                <p id="lingues" class="hashtab">Li Europan <b>lingues</b> es membres del sam familie. Lor separat existentie es un myth. Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca:</p>
-            </div>
-
-            <h4>Another area</h4>
-            <span><a href="#vero">#vero</a>, <a href="#takimata">#takimata</a> or <a href="#gubergren">#gubergren</a></span>
-            <div class="boxing">
-                <p id="vero" class="hashtab">At <b>vero</b> eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <p id="takimata" class="hashtab">
-                    <img src="//lorempixel.com/80/80/cats/7/" class="left" />
-                    no sea <b>takimata</b> sanctus est Lorem ipsum dolor sit amet. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                <p id="gubergren" class="hashtab">Stet clita kasd <b>gubergren</b>, no sea takimata sanctus est. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. At vero eos et accusam et justo duo dolores et ea rebum</p>
-            </div>
-            </p>
-
 
             <h3>prefill forms through url</h3>
             <p>link to <a href="#name=bob&city=springfield&color=green">#name=bob&city=springfield&color=green</a> or link to <a href="#name=alice&city=shelbyville&color=">#name=alice&city=shelbyville&color=</a>.</p>
@@ -108,7 +76,6 @@ h5+h6 {margin-top: 2px;}
             <p>Trigger a <a href="#hyperlink">#hyperlink</a> on:
                 <a id="hyperlink" onclick="alert('alert on a button, triggered by #hyperlink')" style="background-color: inherit;"><button>#alert on a button</button></a>
             </p>
-            <p>Or combine all <a href="#wortbergen/takimata/hashsplit_checkbox/name=%C3%A4licé&city=capitalcity">#wortbergen/takimata /hashsplit_checkbox/name=%C3%A4licé&city=capitalcity</a>.</p>
         </div>
     </div>
 
