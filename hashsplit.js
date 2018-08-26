@@ -28,11 +28,11 @@ function hashsplit() {
 
     (function hashrouter () {
        var hashStr = decodeURIComponent(window.location.hash), hashElements
-       hashStr = hashStr.substring(1, hashStr.length);
-       hashElements = hashStr.split(/[\/&]+/);
-    
+       hashStr = hashStr.substring(1, hashStr.length); /* remove number sign, hash, or pound sign (#) from fragment identifier */
+       hashElements = hashStr.split(/[\/&]+/);         /*  split in array like URL query string (&) or directories (/)  */
+
        for(var i = 0; i < hashElements.length; i++) {
-           hashKeyVal = hashElements[i].split('=');
+           hashKeyVal = hashElements[i].split('=');    /* in case like URL query string, split in key value */
            hashElement( hashKeyVal[0] , hashKeyVal[1] );
        }
     })();
