@@ -9,7 +9,7 @@ It uses the values from the hash with DOM-Id in a specific way:
   * checkbox get checked on 'true' or any string, but unchecked with 'false' or '' (empty string) only.
 * links (`a`) get a click (e.g. you want to link on a page with an active fancybox)
 
-[Demo](http://klml.github.com/hashsplit/)
+[Demo](https://klml.github.io/hashsplit/)
 
 ## usage
 
