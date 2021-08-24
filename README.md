@@ -14,7 +14,7 @@ It uses the values from the hash with DOM-Id in a specific way:
 ## usage
 
 ```
-    <script src="https://cdn.rawgit.com/klml/hashsplit/v2.0/hashsplit.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/gh/klml/hashsplit@master/hashsplit.js" type="text/javascript"></script>
     <script>
         hashsplit(); // activate hashspilt
         updateHash(); // get changed input values back to hash
