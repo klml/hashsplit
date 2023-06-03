@@ -16,8 +16,10 @@ It uses the values from the hash with DOM-Id in a specific way:
 ```
     <script src="https://cdn.jsdelivr.net/gh/klml/hashsplit@master/hashsplit.js" type="text/javascript"></script>
     <script>
+    document.addEventListener('readystatechange', event => { 
         hashsplit(); // activate hashspilt
         updateHash(); // get changed input values back to hash
+    })
     </script>
 ```
 
